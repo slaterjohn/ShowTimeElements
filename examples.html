@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>ShowTimeElements</title>
+
+        <script src="http://momentjs.com/downloads/moment.js"></script>
+        <script src="showtime.js"></script>
+
+        <style>
+            .offer-banner {
+                font-family: sans-serif;
+                background-color: #00ff7e;
+                font-size: 16px;
+                text-align: center;
+                color: #111;
+                padding: 30px;
+                margin: 10px;
+            }
+
+            .u-hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="offer-banner u-hide" data-show-time-start="0800" data-show-time-end="1600" data-show-time-days='[ "sat", "sun" ]'>
+            <p>This will only show <strong>weekends</strong> between <strong>8am</strong> and <strong>4pm</strong> </p>
+        </div><!-- .offer-banner -->
+
+        <div class="offer-banner u-hide" data-show-time-start="1600" data-show-time-end="0800" data-show-time-days='[ "sat", "sun" ]'>
+            <p>This will only show <strong>weekends</strong> between <strong>4pm</strong> and <strong>8am</strong> </p>
+        </div><!-- .offer-banner -->
+
+        <div class="offer-banner u-hide" data-show-time-start="0800" data-show-time-end="1600" data-show-time-days='[ "mon", "tue", "wed", "thu", "fri" ]'>
+            <p>This will only show <strong>weekdays</strong> between <strong>8am</strong> and <strong>4pm</strong> </p>
+        </div><!-- .offer-banner -->
+
+        <div class="offer-banner u-hide" data-show-time-start="0800" data-show-time-end="1600" data-show-time-dates='[ "26-05-2017", "27-05-2017", "28-05-2017" ]'>
+            <p>This will only show between <strong>8am</strong> and <strong>4pm</strong> on <strong>26th, 27th and 28th May 2017</strong> </p>
+        </div><!-- .offer-banner -->
+
+        <script>
+            var element = document.getElementsByClassName('offer-banner');
+            ShowTimeElements(element, {
+                hideClass: 'u-hide'
+            });
+        </script>
+
+    </body>
+</html>
